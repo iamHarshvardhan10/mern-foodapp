@@ -3,7 +3,8 @@ import dotenv from 'dotenv'
 dotenv.config()
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-
+import { dbConnection } from './config/db.js'
+import authRoutes from './routes/user.routes.js'
 // ALLOWED MULTIPLR OTIGIN
 const allowedOrigins = ['http://localhost:5173']
 
@@ -23,6 +24,10 @@ app.get('/', (req, res) => {
     })
 })
 
+
+app.use('/api/v1/auth', authRoutes)
+
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
+    dbConnection()
 })

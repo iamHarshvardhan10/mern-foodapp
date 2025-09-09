@@ -1,6 +1,6 @@
 import expres from 'express'
-import { isSeller, sellerLogin, sellerLogout } from '../controllers/seller.controllers';
-import { verifySeller } from '../middlewares/verifySeller';
+import { isSeller, sellerLogin, sellerLogout } from '../controllers/seller.controllers.js';
+import { verifySeller } from '../middlewares/verifySeller.js';
 
 const router = expres.Router();
 

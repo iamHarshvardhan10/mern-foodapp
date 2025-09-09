@@ -1,7 +1,11 @@
 import expres from 'express'
-import { login, register } from '../controllers/user.controllers.js';
-import { isAuth, logout } from '../controllers/user.controllers.js';
+// import { login, register } from '../controllers/user.controllers.js';
 import { verifyUser } from '../middlewares/verifyUser.js';
+import { isAuth } from '../controllers/user.controllers.js';
+import { logout } from '../controllers/user.controllers.js';
+import { register } from '../controllers/user.controllers.js';
+import { login } from '../controllers/user.controllers.js';
+
 
 const router = expres.Router();
 

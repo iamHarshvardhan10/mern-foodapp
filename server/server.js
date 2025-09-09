@@ -6,6 +6,10 @@ import cors from 'cors'
 import { dbConnection } from './config/db.js'
 import authRoutes from './routes/user.routes.js'
 import sellerRoutes from './routes/seller.routes.js'
+import productRotues from './routes/products.routes.js'
+import addressRoutes from './routes/address.routes.js'
+import cartRoutes from './routes/cart.routes.js'
+import ordersRoutes from './routes/orders.routes.js'
 import cloudinaryConnect from './config/cloudinary.js'
 // ALLOWED MULTIPLR OTIGIN
 const allowedOrigins = ['http://localhost:5173']
@@ -29,6 +33,10 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/seller', sellerRoutes)
+app.use('/api/v1/product', productRotues)
+app.use('/api/v1/cart', cartRoutes)
+app.use('/api/v1/address', addressRoutes)
+app.use('/api/v1/orders', ordersRoutes)
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)

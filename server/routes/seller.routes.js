@@ -7,6 +7,6 @@ const router = expres.Router();
 router.post('/login', sellerLogin)
 
 router.get('/isSeller', verifySeller, isSeller)
-router.post('/sellerLogout', verifySeller, sellerLogout)
+router.get('/sellerLogout', verifySeller, sellerLogout)
 
 export default router;

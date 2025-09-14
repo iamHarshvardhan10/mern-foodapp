@@ -9,7 +9,7 @@ export const verifySeller = async (req, res, next) => {
     }
     try {
 
-        const tokenDecode = jwt.verify(token, process.env.JWT_SECRET)
+        const tokenDecode = jwt.verify(sellerToken, process.env.JWT_SECRET)
         if (tokenDecode.email === process.env.SELLER_EMAIL) {
             next()
         } else {
